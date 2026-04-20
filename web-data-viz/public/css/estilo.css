@@ -67,7 +67,7 @@ align-items: center;
 background-color: #355E5E;
 height: 100%;
 gap: 25px;
-padding: 0 40px;
+padding: 0 38px;
 margin-left: auto;
 }
 .navbar .botoes a{
@@ -231,6 +231,20 @@ margin-left: auto;
   background-size: cover;
 }
 
+.container .titulo span{
+color: brown;
+}
+
+.navbar a{
+  text-decoration: none;
+  color: #fff; 
+  font-weight: 500;
+}
+
+.footer .container{
+  color: black;
+}
+
 .login .container {
   justify-content: center;
   align-items: center;
@@ -244,7 +258,7 @@ margin-left: auto;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  color: palevioletred;
+  color: black;
   flex-direction: column;
   height: fit-content;
   padding: 20px 0;
@@ -269,7 +283,7 @@ margin-left: auto;
 }
 
 .formulario input {
-  border: 2px solid #32b9cd;
+  border: 2px solid black;
   text-align: center;
   border-radius: 10px;
   margin: 0;
@@ -300,7 +314,7 @@ margin-left: auto;
   font-weight: 600;
   font-size: 18px;
   color: #fff;
-  background-color: #ED145B;
+  background-color:#355E5E;
   width: 120px;
   height: 30px;
   align-self: center;
@@ -321,6 +335,17 @@ margin-left: auto;
   display: none
 }
 
+/* CADASTRO */
+
+.container .logo span{
+  color: brown;
+}
+
+.header .navbar{
+  gap: 20px;
+}
+
+
 /* FORMULARIO */
 
 .alerta_erro{
@@ -335,7 +360,7 @@ margin-left: auto;
   width: 230px;
   position: fixed;
   border-radius: 4px;
-  border: #ED145B 3px solid;
+  border: #355E5E 3px solid;
   padding: 10px;
   margin-right: 10%;
 }
@@ -357,7 +382,7 @@ margin-left: auto;
 
 input {
   margin-bottom: 10px;
-  border: 2px solid #32b9cd;
+  border: 2px solid #355E5E;
   padding: 10px;
   text-align: center;
   border-radius: 10px;
