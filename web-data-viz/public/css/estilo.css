@@ -4,13 +4,13 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Barlow', 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: rgb(163, 152, 152);
+  background-color: #4B8684
 }
 
 :root {
-  --tamanho-header: 80px;
-  --tamanho-banner: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
-  --tamanho-simulador: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
+  --tamanho-header: 13vh;
+  --tamanho-banner: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) );
+  --tamanho-simulador: calc(150vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
   --tamanho-login: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
   --tamanho-footer: 65px;
 }
@@ -22,13 +22,17 @@ body {
 }
 
 .header {
+  width: 100%;
   height: var(--tamanho-header);
 }
 
 .header .container {
   justify-content: space-between;
-  align-items: center;
+  align-items: stretch;
   height: 100%;
+  display:flex;
+  align-items: stretch;
+
 }
 
 .header a {
@@ -37,16 +41,44 @@ body {
 }
 
 .agora {
-  font-weight: 800;
+  font-weight: 100;
+  
 }
 
 .navbar {
-  width: 300px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   list-style: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  gap: 28.5px;
+  
+}
+
+.navbar li{
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  
+}
+
+.navbar .botoes{
+gap: 20px;
+display: flex;
+align-items: center;
+background-color: #355E5E;
+height: 100%;
+gap: 25px;
+padding: 0 40px;
+margin-left: auto;
+}
+.navbar .botoes a{
+  text-decoration: none;
   color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 14px;
 }
 
 .titulo {
@@ -80,10 +112,12 @@ body {
 /* BANNER */
 
 .banner {
-  height: var(--tamanho-banner);
+  height: 500px;
+  width: 100%;
   color: white;
   background-image: url('../assets/imgs/escalando_indoor.jpg');
   background-size: cover;
+  box-shadow: inset 0 -30px 20px -10px rgba(0,0,0,0.6);
 }
 
 .banner .container {
@@ -106,8 +140,14 @@ body {
 /* MISSÃO VISÃO VALORES */
 
 .social {
-  background-color: #e5e5e5;
-  display: flex;
+  box-shadow: inset 0 20px 20px -10px rgba(0,0,0,0.6);
+  background-image: url('../assets/imgs/PAREDEESCURA.jpg');
+    width: 100vw;
+    height: 100vh;
+    object-position: center;
+    display: flex;
+    background-size: cover;
+    background-position: center;
 }
 
 .social .container {
@@ -125,8 +165,22 @@ body {
   padding: 30px 0;
 }
 
+.social .container .box{
+  background-color: white;
+  border-radius: 40px;
+  padding:30px 20px;
+  max-width: 250px;
+  max-height: 380px;
+  box-shadow: 5px 5px 5px 5px grey;
+  opacity: 80%;
+}
+
 .social p {
   text-align: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.social h4 {
+ font-size: 20px ;
 }
 
 .box {
@@ -138,27 +192,45 @@ body {
 /* FOOTER */
 
 .footer {
-  background-color: #32b9cd;
+ background-color: #e5e5e5;
+  background-size: cover;
+  background-position: center;
   height: 150px;
   color: #fff;
   display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 15px;
+  width: 100vw;
 }
 
 .footer .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   text-align: center;
+}
+.footer h4{
+  margin: 0;
+  font-size: 18px;
 }
 
 .footer .container .version {
   font-size: 12px;
+  color: black;
+}
+
+.footer .container .frase{
+  color: black;
+  font-weight: bold;
 }
 
 /* LOGIN */
 
 .login {
   height: var(--tamanho-login);
-  background-image: url('../assets/imgs/bg-jelly-fish-para-home.png');
+  background-image: url('../assets/imgs/paredesetor2.jpg');
   background-size: cover;
 }
 
