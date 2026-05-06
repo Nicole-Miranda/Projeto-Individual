@@ -31,6 +31,9 @@ function finalizarAguardar(texto) {
     if (texto) {
         divErrosLogin.style.display = "flex";
         divErrosLogin.innerHTML = texto;
-    }
+    } else {
+    console.log("Houve um erro ao tentar realizar o login!");
+
+}
 }
 
