@@ -1,6 +1,6 @@
 var resultadoModelModel = require("../models/resultadoModel");
 
-function lista(res){
+function lista(req, res){
     resultadoModel.listar()
     .then(function(resultado){
         res.json(resultado)

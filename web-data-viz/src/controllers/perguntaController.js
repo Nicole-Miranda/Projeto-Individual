@@ -1,6 +1,6 @@
 var perguntaModel = require("../models/perguntaModel");
 
-function lista(res){
+function lista(req, res){
     perguntaModel.listar()
     .then(function(resultado){
         res.json(resultado)

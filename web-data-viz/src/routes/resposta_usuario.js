@@ -3,4 +3,6 @@ var router = express.Router();
 
 var resposta_usuarioController = require("../controllers/resposta_usuarioController");
 
-router.get("/",(res)=>{resposta_usuarioController.lista(res)})
+router.get("/", function (req, res) {resposta_usuarioController.lista(req, res)})
+
+module.exports = router;

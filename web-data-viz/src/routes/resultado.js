@@ -3,4 +3,6 @@ var router = express.Router();
 
 var resultadoController = require("../controllers/resultadoController");
 
-router.get("/",(res)=>{resultadoController.lista(res)})
+router.get("/", function (req, res) { resultadoController.lista(req, res) })
+
+module.exports = router;
