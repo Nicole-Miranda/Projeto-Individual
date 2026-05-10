@@ -3,6 +3,6 @@ var router = express.Router();
 
 var resultadoController = require("../controllers/resultadoController");
 
-router.get("/", function (req, res) { resultadoController.lista(req, res) })
+router.get("/adicionar", function (req, res) { resultadoController.adicionar(req, res) })
 
 module.exports = router;

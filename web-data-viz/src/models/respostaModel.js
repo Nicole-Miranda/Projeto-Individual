@@ -2,7 +2,7 @@ var database = require("../database/config")
 
 function listar(){
     var instrucaoSql=
-    `SELECT * FROM resposta`
+    `insert into resposta ()`
 
     return database.executar(instrucaoSql);
 }

@@ -1,39 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=], initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz</title>
 </head>
+
 <body>
     <h2>DESCUBRA O SEU PERFIL DE ESCALADOR</h2>
-    
+
     <div id="quiz_container">
-        <p>Você se sente confortavél subindo a alturas maiores de 5 metros usando cordas e equipamentos de segurança?</p>
-        <input type="radio" name="p1" value="Indoor" id="r1"> Sim, me sinto seguro. <br>
-        <input type="radio" name="p1" value="Tradicional" id="r"> Sim, mas prefiro a rocha do que o ginásio. <br>
+        <p>Você se sente confortavél subindo a alturas maiores de 5 metros usando cordas e equipamentos de segurança?
+        </p>
+        <input type="radio" name="p1" value="Indoor"> Sim, me sinto seguro. <br>
+        <input type="radio" name="p1" value="Tradicional"> Sim, mas prefiro a rocha do que o ginásio. <br>
         <input type="radio" name="p1" value="Boulder"> Não, prefiro ficar mais perto do chão. <br>
         <input type="radio" name="p1" value="Boulder Outdoor"> Prefiro subir blocos ao ar livre. <br>
 
 
 
 
-        <p>Você prefere treinar em um lugar com infraestrutura( banheiros, lanchonetes e música) em vez de ir para a natureza?</p>
+        <p>Você prefere treinar em um lugar com infraestrutura( banheiros, lanchonetes e música) em vez de ir para a
+            natureza?</p>
         <input type="radio" name="p2" value="Indoor"> Sim, prefiro o conforto e a música. <br>
         <input type="radio" name="p2" value="Boulder"> Gosto de infraestrutura, mas para treinar força. <br>
         <input type="radio" name="p2" value="Tradicional"> Não, prefiro o isolamento da montanha. <br>
         <input type="radio" name="p2" value="Boulder Outdoor"> Não, prefiro escalar pedras na natureza. <br>
 
 
-        <p>Você prefere desafios curtos que exigem muita força explosiva do que subir uma parede longa que exige resistência?</p>
+        <p>Você prefere desafios curtos que exigem muita força explosiva do que subir uma parede longa que exige
+            resistência?</p>
         <input type="radio" name="p3" value="Boulder"> Com certeza, foco em força máxima. <br>
         <input type="radio" name="p3" value="Boulder Outdoor"> Sim, se for em blocos na natureza. <br>
         <input type="radio" name="p3" value="Indoor"> Não, prefiro resistência em vias guiadas. <br>
         <input type="radio" name="p3" value="Tradicional"> Prefiro a resistência de vias longas na rocha. <br>
 
 
-        
-        <p>Você gosta da ideia de manusear muitos equipamentos tècnicos e aprender a colocar sua própria segurança na rocha?</p>
+
+        <p>Você gosta da ideia de manusear muitos equipamentos tècnicos e aprender a colocar sua própria segurança na
+            rocha?</p>
         <input type="radio" name="p4" value="Tradicional"> Sim, amo a complexidade técnica. <br>
         <input type="radio" name="p4" value="Indoor"> Gosto de usar o básico no ginásio. <br>
         <input type="radio" name="p4" value="Boulder"> Não, prefiro usar apenas o magnésio e a sapatilha. <br>
@@ -47,39 +53,85 @@
         <input type="radio" name="p5" value="Tradicional"> Não, a corda me traz a segurança necessária. <br>
 
 
-        <p>você sente que a experiência só é completa se você escalar até o topo da pedra e ficar em pé em cima dela?</p>
+        <p>você sente que a experiência só é completa se você escalar até o topo da pedra e ficar em pé em cima dela?
+        </p>
         <input type="radio" name="p6" value="Tradicional"> Sim, o cume é o objetivo final. <br>
         <input type="radio" name="p6" value="Boulder Outdoor"> Sim, o "top out" é a melhor parte. <br>
         <input type="radio" name="p6" value="Indoor"> Não, bater no "top" do ginásio já basta. <br>
         <input type="radio" name="p6" value="Boulder"> Não, o foco é o movimento técnico do problema. <br>
-        <br>    
+        <br>
         <button onclick="FinalizarQuiz()">Finalizar Quiz</button>
 
     </div>
 
-    <div id="resultado"></div>
+    <div id="mensagem"></div>
 
 </body>
 <script>
-    function FinalizarQuiz(){
+    function FinalizarQuiz() {
+        let p1 = document.querySelector('input[name="p1"]:checked').value;
+        let p2 = document.querySelector('input[name="p2"]:checked').value;
+        let p3 = document.querySelector('input[name="p3"]:checked').value;
+        let p4 = document.querySelector('input[name="p4"]:checked').value;
+        let p5 = document.querySelector('input[name="p5"]:checked').value;
+        let p6 = document.querySelector('input[name="p6"]:checked').value;
 
-        let perguntas =['p1','p2','p3','p4','p5','p6']
+        let perguntas = [p1, p2, p3, p4, p5, p6];
+        let categorias = ["Boulder", "Boulder Outdoor", "Indoor", "Tradicional"];
         
-        let EscaladorContador = {
-            'Boulder': 0,
-            'Indoor': 0,
-            'Tradicional': 0,
-            'Boulder Outdoor': 0,
-        };
-        
-        for( let i = 0; i < perguntas.length; i ++){
-         let alternativa = document.getElementsbyName(perguntas[i])
-         
+        let boulder = 0;
+        let boulderOutdoor = 0;
+        let indoor = 0;
+        let tradicional = 0;
 
 
-
+        for (let i = 0; i < perguntas.length; i++) {
+            if (perguntas[i] == categorias[0]) {
+                boulder++;
+            } else if (perguntas[i] == categorias[1]) {
+                boulderOutdoor++;
+            } else if (perguntas[i] == categorias[2]) {
+                indoor++;
+            } else {
+                tradicional++;
+            }
         }
+
+        let valores = [boulder, boulderOutdoor, indoor, tradicional];
+        let indiceMaior = 0;
+
+        for (let i = 0; i < valores.length; i++) {
+            if (valores[indiceMaior] < valores[i]) {
+                indiceMaior = i;
+            }
+        }
+
+        let resultadoVar = categorias[indiceMaior];
+        console.log(resultado)
+        console.log(categorias)
+        console.log(valores)
+        console.log(indiceMaior)
+
+        mensagem.innerHTML +=`Você é o escalador ${resultado}!!`
+
+         fetch("/resultado/adicionar"), {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      // crie um atributo que recebe o valor recuperado aqui
+      // Agora vá para o arquivo routes/usuario.js
+      resultadoServer: resultadoVar,
+
+    }),
+
+
+
+
+
     }
 
 </script>
+
 </html>
