@@ -130,101 +130,59 @@
     function FinalizarQuiz() {
         console.log("O botão foi clicado! A função começou.");
 
-        let p1 = document.querySelector('input[name="p1"]:checked')
-        let p2 = document.querySelector('input[name="p2"]:checked')
-        let p3 = document.querySelector('input[name="p3"]:checked')
-        let p4 = document.querySelector('input[name="p4"]:checked')
-        let p5 = document.querySelector('input[name="p5"]:checked')
-        let p6 = document.querySelector('input[name="p6"]:checked')
-        
-        if (!p1 || !p2 || !p3 || !p4 || !p5 || !p6) {
-            alert("responda todas as perguntas antes de finalizar!");
-            return;
+        let p1 = document.querySelector('input[name="p1"]:checked').value
+        let p2 = document.querySelector('input[name="p2"]:checked').value
+        let p3 = document.querySelector('input[name="p3"]:checked').value
+        let p4 = document.querySelector('input[name="p4"]:checked').value
+        let p5 = document.querySelector('input[name="p5"]:checked').value
+        let p6 = document.querySelector('input[name="p6"]:checked').value
+
+
+        let perguntas = [p1, p2, p3, p4, p5, p6];
+        let categorias = ["Boulder", "Boulder Outdoor", "Indoor", "Tradicional"];
+
+        let boulder = 0;
+        let boulderOutdoor = 0;
+        let indoor = 0;
+        let tradicional = 0;
+
+
+        for (let i = 0; i < perguntas.length; i++) {
+            if (perguntas[i] == categorias[0]) {
+                boulder++;
+            } else if (perguntas[i] == categorias[1]) {
+                boulderOutdoor++;
+            } else if (perguntas[i] == categorias[2]) {
+                indoor++;
+            } else {
+                tradicional++;
+            }
         }
 
-            p1 = p1.value;
-            p2 = p2.value;
-            p3 = p3.value;
-            p4 = p4.value;
-            p5 = p5.value;
-            p6 = p6.value;
+        let valores = [boulder, boulderOutdoor, indoor, tradicional];
+        let indiceMaior = 0;
 
-            let perguntas = [p1, p2, p3, p4, p5, p6];
-            let categorias = ["Boulder", "Boulder Outdoor", "Indoor", "Tradicional"];
-
-            let boulder = 0;
-            let boulderOutdoor = 0;
-            let indoor = 0;
-            let tradicional = 0;
-
-
-            for (let i = 0; i < perguntas.length; i++) {
-                if (perguntas[i] == categorias[0]) {
-                    boulder++;
-                } else if (perguntas[i] == categorias[1]) {
-                    boulderOutdoor++;
-                } else if (perguntas[i] == categorias[2]) {
-                    indoor++;
-                } else {
-                    tradicional++;
-                }
+        for (let i = 0; i < valores.length; i++) {
+            if (valores[indiceMaior] < valores[i]) {
+                indiceMaior = i;
             }
-
-            let valores = [boulder, boulderOutdoor, indoor, tradicional];
-            let indiceMaior = 0;
-
-            for (let i = 0; i < valores.length; i++) {
-                if (valores[indiceMaior] < valores[i]) {
-                    indiceMaior = i;
-                }
-            }
-            
-            
-            let resultadoVar = categorias[indiceMaior];
-            
-            mensagem.innerHTML += `Você é o escalador ${resultadoVar}!!`
-            
-            console.log(resultadoVar)
-            console.log(categorias)
-            console.log(valores)
-            console.log(indiceMaior)
+        }
 
 
-            // 1. Salvar no localStorage para usar na próxima página imediatamente
-            let historico = JSON.parse(localStorage.getItem('historico_quiz')) || [];
-            historico.push({
-                perfil: resultadoVar,
-                data: new Date().toLocaleDateString()
-            });
-            localStorage.setItem('historico_quiz', JSON.stringify(historico));
-            localStorage.setItem('ultimo_resultado', resultadoVar);
+        let resultadoVar = categorias[indiceMaior];
 
-            // 2. Enviar para o banco de dados (corrigido o fechamento do fetch)
-            console.log("Iniciando Fetch para salvar resultado...")
-            fetch("/resultado/adicionar", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                    resultadoServer: resultadoVar,
-                    idUsuarioServer: sessionStorage.id_usuario
-                    // Adicione o ID do usuário se necessário, ex:
-                    // idUsuarioServer: sessionStorage.ID_USUARIO 
-                }),
-            }).then(resposta => {
-                console.log("Resposta do servidor:", resposta);
-                if (resposta.ok) {
-                    console.log("Salvamento realizado com sucesso! Redirecionando...");
-                    // 3. Redirecionar após o sucesso do banco
-                    window.location.href = "mural.html"; // ou sua página de resultado
-                } else {
-                    console.error("Erro na resposta do servidor. Verifique a rota /resultado/adicionar.");
-                    alert("Erro ao salvar no banco, mas vamos te mostrar o resultado!");
-                    console.error("Erro ao salvar o resultado!");
-                }
+        mensagem.innerHTML += `Você é o escalador ${resultadoVar}!!`
 
-            });
+        console.log(resultadoVar)
+        console.log(categorias)
+        console.log(valores)
+        console.log(indiceMaior)
+
+       
+
+        //window.location = "./mural.html";
+
+
 
 
 
@@ -233,6 +191,7 @@
 
 
     }
+
 
 </script>
 

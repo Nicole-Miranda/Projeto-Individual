@@ -3,6 +3,7 @@ var router = express.Router();
 
 var resultadoController = require("../controllers/resultadoController");
 
-router.post("/adicionar", function (req, res) { resultadoController.adicionar(req, res) })
+router.get("/listar", function (req, res) { resultadoController.adicionar(req, res) })
+router.post("/listarResultadoMaisRecente", function (req, res) { resultadoController.listarResultadoMaisRecente(req, res) })
 
 module.exports = router;
