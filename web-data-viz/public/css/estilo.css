@@ -498,8 +498,6 @@ input {
   display: flex;
   width: 80%; /* Ou a largura que você definiu para o seu site */
   justify-content: space-between;
-
-  
 }
 
 /* Estilo específico para o título da página abaixo do menu */
@@ -510,7 +508,7 @@ input {
 
 .titulo-pagina .container {
   justify-content: flex-start; 
-  background-image:/* Força o conteúdo para a esquerda */
+  /* Força o conteúdo para a esquerda */
 }
 
 .titulo-pagina h2 {

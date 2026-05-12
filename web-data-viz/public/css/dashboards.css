@@ -426,3 +426,12 @@ canvas {
   margin-bottom: 100px;
   cursor: pointer;
 }
+
+.perguntas_quiz{
+  display: flex;
+    flex-direction: column; /* Organiza as perguntas uma abaixo da outra */
+    align-items: center;    /* Centraliza horizontalmente */
+    justify-content: center; /* Centraliza verticalmente (opcional) */
+    text-align: center;      /* Garante que o texto dentro das perguntas também centralize */
+    min-height: 100vh;
+}

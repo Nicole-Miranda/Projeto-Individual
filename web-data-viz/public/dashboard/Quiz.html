@@ -2,129 +2,231 @@
 <html lang="en">
 
 <head>
+    <link rel="shortcut icon" href="../assets/icon/favicon2.ico" type="image/x-icon">
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz</title>
+    <title>InfoClimbing | Quiz</title>
+
+
+    <link rel="stylesheet" href="./../css/dashboards.css">
+    <link rel="stylesheet" href="./../css/estilo.css" />
+
+    <script src="../js/sessao.js"></script>
+    <script src="../js/alerta.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-    <h2>DESCUBRA O SEU PERFIL DE ESCALADOR</h2>
+    <div class="janela">
 
-    <div id="quiz_container">
-        <p>Você se sente confortavél subindo a alturas maiores de 5 metros usando cordas e equipamentos de segurança?
-        </p>
-        <input type="radio" name="p1" value="Indoor"> Sim, me sinto seguro. <br>
-        <input type="radio" name="p1" value="Tradicional"> Sim, mas prefiro a rocha do que o ginásio. <br>
-        <input type="radio" name="p1" value="Boulder"> Não, prefiro ficar mais perto do chão. <br>
-        <input type="radio" name="p1" value="Boulder Outdoor"> Prefiro subir blocos ao ar livre. <br>
+        <div class="header-left dash-header">
+
+            <h1>InfoClimbing</h1>
+
+            <div class="hello">
+                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+            </div>
+
+            <div class="btn-nav">
+                <a href="./Quiz.html">
+                    <h3>Quiz</h3>
+                </a>
+            </div>
+
+            <div class="btn-nav-white">
+                <a href="./dashboard.html">
+                    <h3>Painel Pessoa</h3>
+                </a>
+            </div>
+
+            <div class="btn-nav-white">
+                <a href="./mural.html">
+                    <h3>Painel Geral</h3>
+                </a>
+            </div>
+
+            <div class="btn-logout" onclick="limparSessao()">
+                <h3>Sair</h3>
+            </div>
+
+        </div>
+
+        <div class="perguntas_quiz">
+
+            <h2 class="titulo_quiz">DESCUBRA O SEU PERFIL DE ESCALADOR</h2>
+
+            <div id="quiz_container">
+                <p>Você se sente confortavél subindo a alturas maiores de 5 metros usando cordas e equipamentos de
+                    segurança?
+                </p>
+                <input type="radio" name="p1" value="Indoor"> Sim, me sinto seguro. <br>
+                <input type="radio" name="p1" value="Tradicional"> Sim, mas prefiro a rocha do que o ginásio. <br>
+                <input type="radio" name="p1" value="Boulder"> Não, prefiro ficar mais perto do chão. <br>
+                <input type="radio" name="p1" value="Boulder Outdoor"> Prefiro subir blocos ao ar livre. <br>
 
 
 
 
-        <p>Você prefere treinar em um lugar com infraestrutura( banheiros, lanchonetes e música) em vez de ir para a
-            natureza?</p>
-        <input type="radio" name="p2" value="Indoor"> Sim, prefiro o conforto e a música. <br>
-        <input type="radio" name="p2" value="Boulder"> Gosto de infraestrutura, mas para treinar força. <br>
-        <input type="radio" name="p2" value="Tradicional"> Não, prefiro o isolamento da montanha. <br>
-        <input type="radio" name="p2" value="Boulder Outdoor"> Não, prefiro escalar pedras na natureza. <br>
+                <p>Você prefere treinar em um lugar com infraestrutura( banheiros, lanchonetes e música) em vez de ir
+                    para a
+                    natureza?</p>
+                <input type="radio" name="p2" value="Indoor"> Sim, prefiro o conforto e a música. <br>
+                <input type="radio" name="p2" value="Boulder"> Gosto de infraestrutura, mas para treinar força. <br>
+                <input type="radio" name="p2" value="Tradicional"> Não, prefiro o isolamento da montanha. <br>
+                <input type="radio" name="p2" value="Boulder Outdoor"> Não, prefiro escalar pedras na natureza. <br>
 
 
-        <p>Você prefere desafios curtos que exigem muita força explosiva do que subir uma parede longa que exige
-            resistência?</p>
-        <input type="radio" name="p3" value="Boulder"> Com certeza, foco em força máxima. <br>
-        <input type="radio" name="p3" value="Boulder Outdoor"> Sim, se for em blocos na natureza. <br>
-        <input type="radio" name="p3" value="Indoor"> Não, prefiro resistência em vias guiadas. <br>
-        <input type="radio" name="p3" value="Tradicional"> Prefiro a resistência de vias longas na rocha. <br>
+                <p>Você prefere desafios curtos que exigem muita força explosiva do que subir uma parede longa que exige
+                    resistência?</p>
+                <input type="radio" name="p3" value="Boulder"> Com certeza, foco em força máxima. <br>
+                <input type="radio" name="p3" value="Boulder Outdoor"> Sim, se for em blocos na natureza. <br>
+                <input type="radio" name="p3" value="Indoor"> Não, prefiro resistência em vias guiadas. <br>
+                <input type="radio" name="p3" value="Tradicional"> Prefiro a resistência de vias longas na rocha. <br>
 
 
 
-        <p>Você gosta da ideia de manusear muitos equipamentos tècnicos e aprender a colocar sua própria segurança na
-            rocha?</p>
-        <input type="radio" name="p4" value="Tradicional"> Sim, amo a complexidade técnica. <br>
-        <input type="radio" name="p4" value="Indoor"> Gosto de usar o básico no ginásio. <br>
-        <input type="radio" name="p4" value="Boulder"> Não, prefiro usar apenas o magnésio e a sapatilha. <br>
-        <input type="radio" name="p4" value="Boulder Outdoor"> Não, prefiro a simplicidade do crashpad. <br>
+                <p>Você gosta da ideia de manusear muitos equipamentos tècnicos e aprender a colocar sua própria
+                    segurança na
+                    rocha?</p>
+                <input type="radio" name="p4" value="Tradicional"> Sim, amo a complexidade técnica. <br>
+                <input type="radio" name="p4" value="Indoor"> Gosto de usar o básico no ginásio. <br>
+                <input type="radio" name="p4" value="Boulder"> Não, prefiro usar apenas o magnésio e a sapatilha. <br>
+                <input type="radio" name="p4" value="Boulder Outdoor"> Não, prefiro a simplicidade do crashpad. <br>
 
 
-        <p>Para você cair em um colchão no chão é mais tranquilo do que ficar pendurado por uma corda no alto?</p>
-        <input type="radio" name="p5" value="Boulder"> Sim, o colchão me deixa mais livre. <br>
-        <input type="radio" name="p5" value="Boulder Outdoor"> Sim, especialmente se for o crashpad na grama. <br>
-        <input type="radio" name="p5" value="Indoor"> Não, confio muito mais na corda. <br>
-        <input type="radio" name="p5" value="Tradicional"> Não, a corda me traz a segurança necessária. <br>
+                <p>Para você cair em um colchão no chão é mais tranquilo do que ficar pendurado por uma corda no alto?
+                </p>
+                <input type="radio" name="p5" value="Boulder"> Sim, o colchão me deixa mais livre. <br>
+                <input type="radio" name="p5" value="Boulder Outdoor"> Sim, especialmente se for o crashpad na grama.
+                <br>
+                <input type="radio" name="p5" value="Indoor"> Não, confio muito mais na corda. <br>
+                <input type="radio" name="p5" value="Tradicional"> Não, a corda me traz a segurança necessária. <br>
 
 
-        <p>você sente que a experiência só é completa se você escalar até o topo da pedra e ficar em pé em cima dela?
-        </p>
-        <input type="radio" name="p6" value="Tradicional"> Sim, o cume é o objetivo final. <br>
-        <input type="radio" name="p6" value="Boulder Outdoor"> Sim, o "top out" é a melhor parte. <br>
-        <input type="radio" name="p6" value="Indoor"> Não, bater no "top" do ginásio já basta. <br>
-        <input type="radio" name="p6" value="Boulder"> Não, o foco é o movimento técnico do problema. <br>
-        <br>
-        <button onclick="FinalizarQuiz()">Finalizar Quiz</button>
+                <p>você sente que a experiência só é completa se você escalar até o topo da pedra e ficar em pé em cima
+                    dela?
+                </p>
+                <input type="radio" name="p6" value="Tradicional"> Sim, o cume é o objetivo final. <br>
+                <input type="radio" name="p6" value="Boulder Outdoor"> Sim, o "top out" é a melhor parte. <br>
+                <input type="radio" name="p6" value="Indoor"> Não, bater no "top" do ginásio já basta. <br>
+                <input type="radio" name="p6" value="Boulder"> Não, o foco é o movimento técnico do problema. <br>
+                <br>
+                <button onclick="FinalizarQuiz()">Finalizar Quiz</button>
 
-    </div>
+            </div>
+        </div>
 
-    <div id="mensagem"></div>
+        <div id="mensagem"></div>
 
 </body>
 <script>
+
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
     function FinalizarQuiz() {
-        let p1 = document.querySelector('input[name="p1"]:checked').value;
-        let p2 = document.querySelector('input[name="p2"]:checked').value;
-        let p3 = document.querySelector('input[name="p3"]:checked').value;
-        let p4 = document.querySelector('input[name="p4"]:checked').value;
-        let p5 = document.querySelector('input[name="p5"]:checked').value;
-        let p6 = document.querySelector('input[name="p6"]:checked').value;
+        console.log("O botão foi clicado! A função começou.");
 
-        let perguntas = [p1, p2, p3, p4, p5, p6];
-        let categorias = ["Boulder", "Boulder Outdoor", "Indoor", "Tradicional"];
+        let p1 = document.querySelector('input[name="p1"]:checked')
+        let p2 = document.querySelector('input[name="p2"]:checked')
+        let p3 = document.querySelector('input[name="p3"]:checked')
+        let p4 = document.querySelector('input[name="p4"]:checked')
+        let p5 = document.querySelector('input[name="p5"]:checked')
+        let p6 = document.querySelector('input[name="p6"]:checked')
         
-        let boulder = 0;
-        let boulderOutdoor = 0;
-        let indoor = 0;
-        let tradicional = 0;
-
-
-        for (let i = 0; i < perguntas.length; i++) {
-            if (perguntas[i] == categorias[0]) {
-                boulder++;
-            } else if (perguntas[i] == categorias[1]) {
-                boulderOutdoor++;
-            } else if (perguntas[i] == categorias[2]) {
-                indoor++;
-            } else {
-                tradicional++;
-            }
+        if (!p1 || !p2 || !p3 || !p4 || !p5 || !p6) {
+            alert("responda todas as perguntas antes de finalizar!");
+            return;
         }
 
-        let valores = [boulder, boulderOutdoor, indoor, tradicional];
-        let indiceMaior = 0;
+            p1 = p1.value;
+            p2 = p2.value;
+            p3 = p3.value;
+            p4 = p4.value;
+            p5 = p5.value;
+            p6 = p6.value;
 
-        for (let i = 0; i < valores.length; i++) {
-            if (valores[indiceMaior] < valores[i]) {
-                indiceMaior = i;
+            let perguntas = [p1, p2, p3, p4, p5, p6];
+            let categorias = ["Boulder", "Boulder Outdoor", "Indoor", "Tradicional"];
+
+            let boulder = 0;
+            let boulderOutdoor = 0;
+            let indoor = 0;
+            let tradicional = 0;
+
+
+            for (let i = 0; i < perguntas.length; i++) {
+                if (perguntas[i] == categorias[0]) {
+                    boulder++;
+                } else if (perguntas[i] == categorias[1]) {
+                    boulderOutdoor++;
+                } else if (perguntas[i] == categorias[2]) {
+                    indoor++;
+                } else {
+                    tradicional++;
+                }
             }
-        }
 
-        let resultadoVar = categorias[indiceMaior];
-        console.log(resultado)
-        console.log(categorias)
-        console.log(valores)
-        console.log(indiceMaior)
+            let valores = [boulder, boulderOutdoor, indoor, tradicional];
+            let indiceMaior = 0;
 
-        mensagem.innerHTML +=`Você é o escalador ${resultado}!!`
+            for (let i = 0; i < valores.length; i++) {
+                if (valores[indiceMaior] < valores[i]) {
+                    indiceMaior = i;
+                }
+            }
+            
+            
+            let resultadoVar = categorias[indiceMaior];
+            
+            mensagem.innerHTML += `Você é o escalador ${resultadoVar}!!`
+            
+            console.log(resultadoVar)
+            console.log(categorias)
+            console.log(valores)
+            console.log(indiceMaior)
 
-         fetch("/resultado/adicionar"), {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      // crie um atributo que recebe o valor recuperado aqui
-      // Agora vá para o arquivo routes/usuario.js
-      resultadoServer: resultadoVar,
 
-    }),
+            // 1. Salvar no localStorage para usar na próxima página imediatamente
+            let historico = JSON.parse(localStorage.getItem('historico_quiz')) || [];
+            historico.push({
+                perfil: resultadoVar,
+                data: new Date().toLocaleDateString()
+            });
+            localStorage.setItem('historico_quiz', JSON.stringify(historico));
+            localStorage.setItem('ultimo_resultado', resultadoVar);
+
+            // 2. Enviar para o banco de dados (corrigido o fechamento do fetch)
+            console.log("Iniciando Fetch para salvar resultado...")
+            fetch("/resultado/adicionar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    resultadoServer: resultadoVar,
+                    idUsuarioServer: sessionStorage.id_usuario
+                    // Adicione o ID do usuário se necessário, ex:
+                    // idUsuarioServer: sessionStorage.ID_USUARIO 
+                }),
+            }).then(resposta => {
+                console.log("Resposta do servidor:", resposta);
+                if (resposta.ok) {
+                    console.log("Salvamento realizado com sucesso! Redirecionando...");
+                    // 3. Redirecionar após o sucesso do banco
+                    window.location.href = "mural.html"; // ou sua página de resultado
+                } else {
+                    console.error("Erro na resposta do servidor. Verifique a rota /resultado/adicionar.");
+                    alert("Erro ao salvar no banco, mas vamos te mostrar o resultado!");
+                    console.error("Erro ao salvar o resultado!");
+                }
+
+            });
+
+
 
 
 
