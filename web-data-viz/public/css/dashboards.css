@@ -578,9 +578,13 @@ canvas {
 }
 
 .header-left {
-    width: 250px;       /
+    width: 250px;       
     min-width: 250px;
     height: 100vh;
     position: sticky;   
     top: 0;
+}
+
+.header-left.logo h1{
+  font-family: "Fjalla One", sans-serif;
 }
