@@ -3,7 +3,7 @@ var database = require("../database/config")
 function adicionar(id_usuario,resultado){
     var instrucaoSql=
    `INSERT INTO resultado (fk_usuario, resultado, dt_resultado) 
-        VALUES (${id_usuario}, '${resultado}');
+        VALUES (${id_usuario}, '${resultado}', now());
     `;
 
     return database.executar(instrucaoSql);

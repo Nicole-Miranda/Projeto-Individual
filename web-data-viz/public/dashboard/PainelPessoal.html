@@ -76,6 +76,7 @@
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
         var idUsuario = sessionStorage.ID_USUARIO;    
+        
         fetch("/resultado/listarResultadoMaisRecente/", {
             method: "POST",
             headers: {
@@ -94,16 +95,16 @@
              //fetch("/resultado/listarTodosResultadosRecentes/", {
             //method: "GET",
             //headers: {
-              //  "Content-Type": "application/json"
+              //"Content-Type": "application/json"
             //},
             //body: JSON.stringify({
-              //  idUsuarioServer: idUsuario
+                //idUsuarioServer: idUsuario
             //})}).then(function (resposta) {
-              //  resposta.json().then(function (data) {
-                //    console.log(data)
+               // resposta.json().then(function (data) {
+                   // console.log(data)
 
-                  //  span_perfil.innerHTML = data.resultado;
-                //})
+                    //span_perfil.innerHTML = data.resultado;
+               // })
             //})
         
    

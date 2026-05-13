@@ -1,7 +1,10 @@
 var resultadoModel = require("../models/resultadoModel");
 
 function adicionar(req, res){
-   resultadoModel.adicionar()
+    var id_usuario = req.body.idUsuarioServer;
+
+
+   resultadoModel.adicionar(id_usuario)
     .then(function(resultado){
         res.json(resultado)
     })

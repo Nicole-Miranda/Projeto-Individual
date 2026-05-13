@@ -25,7 +25,7 @@
 
         <div class="header-left">
             <div class="logo">
-                <img src="assets/icon/carabiner.png" alt="icon_logo">
+            
                 <h1><span>Info</span>Climbing</h1>
             </div>
 
@@ -190,15 +190,29 @@
 
 
         let resultadoVar = categorias[indiceMaior];
+         var idUsuario = sessionStorage.ID_USUARIO;  
 
-        mensagem.innerHTML += `Você é o escalador ${resultadoVar}!!`
-
+        
         console.log(resultadoVar)
         console.log(categorias)
         console.log(valores)
         console.log(indiceMaior)
-
-
+        
+        fetch("/resultado/adicionar/", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                idUsuarioServer: idUsuario
+            })}).then(function (resposta) {
+                resposta.json().then(function (data) {
+                    console.log(data)
+                })
+            })
+            
+            
+            mensagem.innerHTML += `Você é o escalador ${resultadoVar}!!`
 
         window.location = "./PainelPessoal.html";
 
