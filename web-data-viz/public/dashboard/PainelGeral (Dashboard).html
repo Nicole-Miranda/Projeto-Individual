@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Geral</title>
+    <link rel="shortcut icon" href="../assets/icon/favicon2.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InfoClimbing | Dashboards</title>
+
+    
+    <link rel="stylesheet" href="./../css/dashboards.css">
+    <link rel="stylesheet" href="./../css/estilo.css" />
+    <script src="../js/sessao.js"></script> 
+    <script src="./../js/alerta.js"></script>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- scripts do Chart.js - 2022-1 -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!--FONT AWESOME-->
+    <script src="https://kit.fontawesome.com/9f7414eb10.js" crossorigin="anonymous"></script>
+</head>
+<body>
+     <div class="janela">
+        <div class="header-left">
+            <h1>InfoClimbing</h1>
+
+            <div class="hello">
+                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+            </div>
+
+            <div class="btn-nav-white">
+                <a href="./Quiz.html">
+                    <h3>Quiz</h3>
+                </a>
+            </div>
+
+            <div class="btn-nav">
+                <a href="mural.html">
+                    <h3>Painel Pessoal</h3>
+                </a>
+
+            </div>
+
+            <div class="btn-nav-white">
+                <a href="./PainelGeral (Dashboard).html">
+                    <h3>Painel Geral</h3>
+                </a>
+            </div>
+
+            <div class="btn-logout" onclick="limparSessao()">
+                <h3>Sair</h3>
+            </div>
+
+        </div>
+
+           <div class="container_charts">
+        <div class="top-left">
+            <canvas id="ipt_GraficoBarrasLinhas"></canvas>
+        </div>
+
+        <div class="top-right">
+            <canvas id="ipt_GraficoPizza"></canvas>
+        </div>
+</body>
+<script>
+    let GraficoDeLinha = ipt_GraficoBarrasLinhas.value;
+    let GraficoDePizza = ipt_GraficoPizza.value;
+
+
+     new Chart(GraficoBarrasLinhas, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [
+                {
+                    label: 'Dentro do prazo',
+                    data: LinhasDadosAzuis,
+                    backgroundColor: 'blue',
+                    borderColor: 'black',
+                },
+                {
+                    label: 'Fora do prazo',
+                    data: LinhasDadosVermelhos,
+                    backgroundColor: 'red',HL_CONNECT,
+                    borderColor: 'black',
+                },
+                {
+                    label: 'Quase fora do prazo',
+                    data: LinhasDadosLaranjas,
+                    backgroundColor: 'orange',
+                    borderColor: 'black',
+                },
+                {
+                    type: 'line',
+                    label: 'Limite Invisivel',
+                    data: limite,
+                    borderColor: 'red',
+                    borderWidth: 2,
+                    pointRadius: 0,
+                    fill: false,
+                    borderDash: [5, 5],
+                    order: 1
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Horas'
+                    },
+                    stacked: true
+                },
+                x: {
+                    offset: true,
+                    stacked: true
+                }
+            },
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'TEMPO MÉDIO POR DOCA',
+                    color: 'black',
+                    font: {
+                        size: 32
+                    }
+                },
+                legend: {
+                    labels: {
+                        filter: (item) => item.text !== 'Limite Invisivel' // Esconde a legenda da linha limite
+                    }
+                }
+            }
+        }
+    });
+</script>
+
+</html>

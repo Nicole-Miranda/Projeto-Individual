@@ -1,6 +1,7 @@
 /* pagina mural */
 
 @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
 
 body {
   margin: 0;
@@ -348,7 +349,6 @@ canvas {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  border-right: 3px solid #32b9cd;
   background-color: #212124;
 }
 
@@ -356,7 +356,7 @@ canvas {
   display: flex;
   width: 70%;
   height: fit-content;
-  background-color: #161618;
+  background-color: #212124;
   position: relative;
   top: 0;
   left: 25%;
@@ -365,8 +365,27 @@ canvas {
 }
 
 .header-left h1 {
-  color: #32b9cd;
+  color: white;
+
 }
+
+.header-left h1 span {
+  color: brown;
+
+}
+
+.header-left .dash-header .logo {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  gap: 10px;
+  font-family: "Fjalla One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
 
 .hello {
   width: 100%;
@@ -375,7 +394,7 @@ canvas {
 }
 
 .hello h3 {
-  color: #e3b062;
+  color: white;
   font-weight: 300;
   font-size: 1.2rem;
 }
@@ -387,7 +406,7 @@ canvas {
 .btn-nav {
   width: 40%;
   color: white;
-  background-color: #e6005a;
+  background-color: brown;
   border-radius: 5px;
   text-align: center;
   padding: 2% 5%;
@@ -396,14 +415,14 @@ canvas {
 .btn-nav-white {
   width: 40%;
   background-color: white;
-  border: 3px solid #e6005a;
+  border: 3px solid brown;
   border-radius: 5px;
   text-align: center;
   padding: 2% 5%;
 }
 
 .btn-nav-white h3 {
-  color: #e6005a;
+  color: brown;
   padding: 0;
   margin: 0;
 }
@@ -418,7 +437,7 @@ canvas {
   margin: 0;
   padding: 0;
   width: 20%;
-  background-color: #32b9cd;
+  background-color: #355E5E;
   color: white;
   border-radius: 10px;
   text-align: center;
@@ -427,11 +446,141 @@ canvas {
   cursor: pointer;
 }
 
-.perguntas_quiz{
-  display: flex;
-    flex-direction: column; /* Organiza as perguntas uma abaixo da outra */
-    align-items: center;    /* Centraliza horizontalmente */
-    justify-content: center; /* Centraliza verticalmente (opcional) */
-    text-align: center;      /* Garante que o texto dentro das perguntas também centralize */
+
+/*Quiz*/
+.janela {
+    display: flex;
     min-height: 100vh;
+    background-color: #355E5E;/* Cor de fundo que aparece na sua imagem */
+}
+
+.perguntas {
+    flex: 1; /* Ocupa todo o espaço restante ao lado do header */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza os cards horizontalmente */
+    padding: 40px;
+    overflow-y: auto; /* Permite scroll se o quiz for longo */
+}
+
+.titulo_quiz {
+    color: white;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+
+#quiz_container {
+    width: 100%;
+    max-width: 700px; /* Largura máxima para não esticar demais */
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espaço entre cada card */
+}
+
+
+
+.pergunta-card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.pergunta-card p {
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #1a1a1a;
+}
+
+.botao_quiz {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+
+.botao_quiz button {
+    background-color: #a32a2a;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.botao_quiz button:hover {
+    background-color: #d13232;
+}
+
+/*PAINEL PESSOAL*/
+
+
+.dash-content {
+    flex: 1;                    
+    display: flex;
+    flex-direction: column;     
+    align-items: center;        
+    padding: 40px;
+    background-color: #2e4644;  
+    min-height: 100vh;
+}
+
+.titulo_painelPessoal {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.titulo_painelPessoal h1 {
+    color: white;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+}
+
+
+.box-resultado, .historico-container {
+    background-color: white;
+    width: 80%;                 
+    max-width: 800px;          
+    padding: 30px;
+    border-radius: 15px;        
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); 
+    margin-bottom: 30px;        
+    text-align: center;         
+}
+
+
+.box-resultado h2 {
+    color: #333;
+    margin: 0;
+}
+
+
+.historico-container h3 {
+    color: #333;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+#lista_historico {
+    color: #555;
+    font-size: 1.1rem;
+}
+
+.janela {
+    display: flex;
+    width: 100%;
+}
+
+.header-left {
+    width: 250px;       /
+    min-width: 250px;
+    height: 100vh;
+    position: sticky;   
+    top: 0;
 }

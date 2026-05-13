@@ -23,7 +23,10 @@
 <body>
     <div class="janela">
         <div class="header-left">
-            <h1>InfoClimbing</h1>
+            <a href="logo">
+                <img src="assets/imgs/carabiner.png" alt="icon_logo">
+                <h1><span>Info</span>Climbing</h1>
+            </a>
 
             <div class="hello">
                 <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
@@ -36,14 +39,16 @@
             </div>
 
             <div class="btn-nav">
-                <a href="dashboard.html">
-                    <h3>Painel Geral</h3>
+                <a href="PainelPessoal.html">
+                    <h3>Painel Pessoal</h3>
                 </a>
 
             </div>
 
             <div class="btn-nav-white">
-                <h3>Painel Pessoal</h3>
+                <a href="dashboard.html">
+                    <h3>Painel Geral</h3>
+                </a>
                 
             </div>
 
@@ -54,6 +59,9 @@
         </div>
 
         <div class="dash-content">
+            <div class="titulo_painelPessoal">
+                <h1>PAINEL PESSOAL DE <span id="b_usuario"></span></h1>
+            </div>
             <div class="box-resultado">
                 <h2>Seu Perfil Atual: <span id="span_perfil" style="color: #e3b062;"></span></h2>
             </div>
@@ -82,6 +90,21 @@
                     span_perfil.innerHTML = data[0].resultado;
                 })
             })
+
+             //fetch("/resultado/listarTodosResultadosRecentes/", {
+            //method: "GET",
+            //headers: {
+              //  "Content-Type": "application/json"
+            //},
+            //body: JSON.stringify({
+              //  idUsuarioServer: idUsuario
+            //})}).then(function (resposta) {
+              //  resposta.json().then(function (data) {
+                //    console.log(data)
+
+                  //  span_perfil.innerHTML = data.resultado;
+                //})
+            //})
         
    
 </script>

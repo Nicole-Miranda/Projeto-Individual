@@ -16,8 +16,19 @@ function listarResultadoMaisRecente(req, res) {
         })
 }
 
+function listarTodosResultadosRecentes(req, res) {
+    var id_usuario = req.body.idUsuarioServer;
+
+    resultadoModel.listarTodosResultadosRecentes(id_usuario)
+        .then(function(resultado) {
+            res.json(resultado);
+        })
+}
+
 
 module.exports = {
     adicionar,
-    listarResultadoMaisRecente
+    listarResultadoMaisRecente,
+    listarTodosResultadosRecentes
+    
 }

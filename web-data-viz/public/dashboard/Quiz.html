@@ -23,9 +23,11 @@
 <body>
     <div class="janela">
 
-        <div class="header-left dash-header">
-
-            <h1>InfoClimbing</h1>
+        <div class="header-left">
+            <div class="logo">
+                <img src="assets/icon/carabiner.png" alt="icon_logo">
+                <h1><span>Info</span>Climbing</h1>
+            </div>
 
             <div class="hello">
                 <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
@@ -38,13 +40,13 @@
             </div>
 
             <div class="btn-nav-white">
-                <a href="./dashboard.html">
-                    <h3>Painel Pessoa</h3>
+                <a href="PainelPessoal.html">
+                    <h3>Painel Pessoal</h3>
                 </a>
             </div>
 
             <div class="btn-nav-white">
-                <a href="./mural.html">
+                <a href="dashboard.html">
                     <h3>Painel Geral</h3>
                 </a>
             </div>
@@ -54,73 +56,91 @@
             </div>
 
         </div>
+        <div id="mensagem"></div>
 
-        <div class="perguntas_quiz">
+        <div class="perguntas">
 
             <h2 class="titulo_quiz">DESCUBRA O SEU PERFIL DE ESCALADOR</h2>
 
             <div id="quiz_container">
-                <p>Você se sente confortavél subindo a alturas maiores de 5 metros usando cordas e equipamentos de
-                    segurança?
-                </p>
-                <input type="radio" name="p1" value="Indoor"> Sim, me sinto seguro. <br>
-                <input type="radio" name="p1" value="Tradicional"> Sim, mas prefiro a rocha do que o ginásio. <br>
-                <input type="radio" name="p1" value="Boulder"> Não, prefiro ficar mais perto do chão. <br>
-                <input type="radio" name="p1" value="Boulder Outdoor"> Prefiro subir blocos ao ar livre. <br>
+                <div class="pergunta-card">
+                    <p>Você se sente confortavél subindo a alturas maiores de 5 metros usando cordas e equipamentos de
+                        segurança?
+                    </p>
+                    <input type="radio" name="p1" value="Indoor"> Sim, me sinto seguro. <br>
+                    <input type="radio" name="p1" value="Tradicional"> Sim, mas prefiro a rocha do que o ginásio. <br>
+                    <input type="radio" name="p1" value="Boulder"> Não, prefiro ficar mais perto do chão. <br>
+                    <input type="radio" name="p1" value="Boulder Outdoor"> Prefiro subir blocos ao ar livre. <br>
+                </div>
 
 
 
+                <div class="pergunta-card">
+                    <p>Você prefere treinar em um lugar com infraestrutura( banheiros, lanchonetes e música) em vez de
+                        ir
+                        para a
+                        natureza?</p>
+                    <input type="radio" name="p2" value="Indoor"> Sim, prefiro o conforto e a música. <br>
+                    <input type="radio" name="p2" value="Boulder"> Gosto de infraestrutura, mas para treinar força. <br>
+                    <input type="radio" name="p2" value="Tradicional"> Não, prefiro o isolamento da montanha. <br>
+                    <input type="radio" name="p2" value="Boulder Outdoor"> Não, prefiro escalar pedras na natureza. <br>
+                </div>
 
-                <p>Você prefere treinar em um lugar com infraestrutura( banheiros, lanchonetes e música) em vez de ir
-                    para a
-                    natureza?</p>
-                <input type="radio" name="p2" value="Indoor"> Sim, prefiro o conforto e a música. <br>
-                <input type="radio" name="p2" value="Boulder"> Gosto de infraestrutura, mas para treinar força. <br>
-                <input type="radio" name="p2" value="Tradicional"> Não, prefiro o isolamento da montanha. <br>
-                <input type="radio" name="p2" value="Boulder Outdoor"> Não, prefiro escalar pedras na natureza. <br>
-
-
-                <p>Você prefere desafios curtos que exigem muita força explosiva do que subir uma parede longa que exige
-                    resistência?</p>
-                <input type="radio" name="p3" value="Boulder"> Com certeza, foco em força máxima. <br>
-                <input type="radio" name="p3" value="Boulder Outdoor"> Sim, se for em blocos na natureza. <br>
-                <input type="radio" name="p3" value="Indoor"> Não, prefiro resistência em vias guiadas. <br>
-                <input type="radio" name="p3" value="Tradicional"> Prefiro a resistência de vias longas na rocha. <br>
-
-
-
-                <p>Você gosta da ideia de manusear muitos equipamentos tècnicos e aprender a colocar sua própria
-                    segurança na
-                    rocha?</p>
-                <input type="radio" name="p4" value="Tradicional"> Sim, amo a complexidade técnica. <br>
-                <input type="radio" name="p4" value="Indoor"> Gosto de usar o básico no ginásio. <br>
-                <input type="radio" name="p4" value="Boulder"> Não, prefiro usar apenas o magnésio e a sapatilha. <br>
-                <input type="radio" name="p4" value="Boulder Outdoor"> Não, prefiro a simplicidade do crashpad. <br>
+                <div class="pergunta-card">
+                    <p>Você prefere desafios curtos que exigem muita força explosiva do que subir uma parede longa que
+                        exige
+                        resistência?</p>
+                    <input type="radio" name="p3" value="Boulder"> Com certeza, foco em força máxima. <br>
+                    <input type="radio" name="p3" value="Boulder Outdoor"> Sim, se for em blocos na natureza. <br>
+                    <input type="radio" name="p3" value="Indoor"> Não, prefiro resistência em vias guiadas. <br>
+                    <input type="radio" name="p3" value="Tradicional"> Prefiro a resistência de vias longas na rocha.
+                    <br>
+                </div>
 
 
-                <p>Para você cair em um colchão no chão é mais tranquilo do que ficar pendurado por uma corda no alto?
-                </p>
-                <input type="radio" name="p5" value="Boulder"> Sim, o colchão me deixa mais livre. <br>
-                <input type="radio" name="p5" value="Boulder Outdoor"> Sim, especialmente se for o crashpad na grama.
+                <div class="pergunta-card">
+                    <p>Você gosta da ideia de manusear muitos equipamentos tècnicos e aprender a colocar sua própria
+                        segurança na
+                        rocha?</p>
+                    <input type="radio" name="p4" value="Tradicional"> Sim, amo a complexidade técnica. <br>
+                    <input type="radio" name="p4" value="Indoor"> Gosto de usar o básico no ginásio. <br>
+                    <input type="radio" name="p4" value="Boulder"> Não, prefiro usar apenas o magnésio e a sapatilha.
+                    <br>
+                    <input type="radio" name="p4" value="Boulder Outdoor"> Não, prefiro a simplicidade do crashpad. <br>
+                </div>
+
+                <div class="pergunta-card">
+
+                    <p>Para você cair em um colchão no chão é mais tranquilo do que ficar pendurado por uma corda no
+                        alto?
+                    </p>
+                    <input type="radio" name="p5" value="Boulder"> Sim, o colchão me deixa mais livre. <br>
+                    <input type="radio" name="p5" value="Boulder Outdoor"> Sim, especialmente se for o crashpad na
+                    grama.
+                    <br>
+                    <input type="radio" name="p5" value="Indoor"> Não, confio muito mais na corda. <br>
+                    <input type="radio" name="p5" value="Tradicional"> Não, a corda me traz a segurança necessária. <br>
+                </div>
+
+                <div class="pergunta-card">
+
+                    <p>você sente que a experiência só é completa se você escalar até o topo da pedra e ficar em pé em
+                        cima
+                        dela?
+                    </p>
+                    <input type="radio" name="p6" value="Tradicional"> Sim, o cume é o objetivo final. <br>
+                    <input type="radio" name="p6" value="Boulder Outdoor"> Sim, o "top out" é a melhor parte. <br>
+                    <input type="radio" name="p6" value="Indoor"> Não, bater no "top" do ginásio já basta. <br>
+                    <input type="radio" name="p6" value="Boulder"> Não, o foco é o movimento técnico do problema. <br>
+                </div>
                 <br>
-                <input type="radio" name="p5" value="Indoor"> Não, confio muito mais na corda. <br>
-                <input type="radio" name="p5" value="Tradicional"> Não, a corda me traz a segurança necessária. <br>
 
-
-                <p>você sente que a experiência só é completa se você escalar até o topo da pedra e ficar em pé em cima
-                    dela?
-                </p>
-                <input type="radio" name="p6" value="Tradicional"> Sim, o cume é o objetivo final. <br>
-                <input type="radio" name="p6" value="Boulder Outdoor"> Sim, o "top out" é a melhor parte. <br>
-                <input type="radio" name="p6" value="Indoor"> Não, bater no "top" do ginásio já basta. <br>
-                <input type="radio" name="p6" value="Boulder"> Não, o foco é o movimento técnico do problema. <br>
-                <br>
+            </div>
+            <div class="botao_quiz">
                 <button onclick="FinalizarQuiz()">Finalizar Quiz</button>
-
             </div>
         </div>
 
-        <div id="mensagem"></div>
 
 </body>
 <script>
@@ -178,9 +198,9 @@
         console.log(valores)
         console.log(indiceMaior)
 
-       
 
-        //window.location = "./mural.html";
+
+        window.location = "./PainelPessoal.html";
 
 
 

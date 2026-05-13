@@ -16,7 +16,15 @@ function listarResultadoMaisRecente(id_usuario){
     return database.executar(instrucaoSql);
 }
 
+function listarTodosResultadosRecentes(id_usuario){
+    var instrucaoSql=
+    `SELECT id_resultado, fk_usuario, resultado, dt_resultado FROM resultado WHERE fk_usuario = ${id_usuario} ORDER BY dt_resultado;`;
+
+    return database.executar(instrucaoSql);
+}
+
 module.exports = {
     adicionar,
-    listarResultadoMaisRecente
+    listarResultadoMaisRecente,
+    listarTodosResultadosRecentes
 }
