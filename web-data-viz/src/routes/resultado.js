@@ -3,8 +3,9 @@ var router = express.Router();
 
 var resultadoController = require("../controllers/resultadoController");
 
-router.post("/listar", function (req, res) { resultadoController.adicionar(req, res) })
+router.post("/adicionar", function (req, res) { resultadoController.adicionar(req, res) })
 router.post("/listarResultadoMaisRecente", function (req, res) { resultadoController.listarResultadoMaisRecente(req, res) })
-router.get("/listarTodosResultadosRecentes", function (req, res) { resultadoController.listarTodosResultadosRecentes(req, res) })
+router.post("/listarTodosResultadosRecentes", function (req, res) { resultadoController.listarTodosResultadosRecentes(req, res) })
+router.get("/ExibirDadosUsuarios", function (req, res) { resultadoController.ExibirDadosUsuarios(req, res) })
 
 module.exports = router;

@@ -92,20 +92,24 @@
                 })
             })
 
-             //fetch("/resultado/listarTodosResultadosRecentes/", {
-            //method: "GET",
-            //headers: {
-              //"Content-Type": "application/json"
-            //},
-            //body: JSON.stringify({
-                //idUsuarioServer: idUsuario
-            //})}).then(function (resposta) {
-               // resposta.json().then(function (data) {
-                   // console.log(data)
+            fetch("/resultado/listarTodosResultadosRecentes/", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                idUsuarioServer: idUsuario
+            })}).then(function (resposta) {
+                resposta.json().then(function (data) {
+                    console.log(data)
 
-                    //span_perfil.innerHTML = data.resultado;
-               // })
-            //})
+                    lista_historico.innerHTML = '';
+
+                    for (let i = 0; i < data.length; i++) {
+                        lista_historico.innerHTML += `Você já foi o escalador: ${data[i].resultado}<br>`;
+                    }
+                })
+            })
         
    
 </script>

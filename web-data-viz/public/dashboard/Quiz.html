@@ -46,7 +46,7 @@
             </div>
 
             <div class="btn-nav-white">
-                <a href="dashboard.html">
+                <a href="PainelGeral.html">
                     <h3>Painel Geral</h3>
                 </a>
             </div>
@@ -67,7 +67,8 @@
                     <p>Você se sente confortavél subindo a alturas maiores de 5 metros usando cordas e equipamentos de
                         segurança?
                     </p>
-                    <input type="radio" name="p1" value="Indoor"> Sim, me sinto seguro. <br>
+                    <input type="radio" name="p1" value="Indoor" id="p1_indoor"> 
+                    <label for="p1_indoor">Sim, me sinto seguro.</label><br>
                     <input type="radio" name="p1" value="Tradicional"> Sim, mas prefiro a rocha do que o ginásio. <br>
                     <input type="radio" name="p1" value="Boulder"> Não, prefiro ficar mais perto do chão. <br>
                     <input type="radio" name="p1" value="Boulder Outdoor"> Prefiro subir blocos ao ar livre. <br>
@@ -190,7 +191,7 @@
 
 
         let resultadoVar = categorias[indiceMaior];
-         var idUsuario = sessionStorage.ID_USUARIO;  
+        var idUsuario = sessionStorage.ID_USUARIO;  
 
         
         console.log(resultadoVar)
@@ -204,7 +205,8 @@
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                idUsuarioServer: idUsuario
+                idUsuarioServer: idUsuario,
+                resultadoServer: resultadoVar
             })}).then(function (resposta) {
                 resposta.json().then(function (data) {
                     console.log(data)
@@ -215,18 +217,6 @@
             mensagem.innerHTML += `Você é o escalador ${resultadoVar}!!`
 
         window.location = "./PainelPessoal.html";
-
-
-
-
-
-
-
-
-
     }
-
-
 </script>
-
 </html>
