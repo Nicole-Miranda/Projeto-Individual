@@ -451,7 +451,7 @@ canvas {
 .janela {
     display: flex;
     min-height: 100vh;
-    background-color: #355E5E;/* Cor de fundo que aparece na sua imagem */
+    background-color: #355E5E;
 }
 
 .perguntas {
@@ -587,4 +587,39 @@ canvas {
 
 .header-left.logo h1{
   font-family: "Fjalla One", sans-serif;
+}
+
+/*Painel Geral*/
+
+.janela {
+    display: flex;
+    width: 100%;
+}
+
+
+.kpis{
+align-items: center;
+margin-top: 40px;
+}
+
+.kpis .kpi-item{
+    background-color: white;
+    width: 80%;                 
+    max-width: 800px;          
+    padding: 30px;
+    border-radius: 10px;        
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); 
+    margin-bottom: 30px;        
+    text-align: center; 
+    gap: 25px; 
+}
+
+.container_charts {
+  flex: 0.5;
+  display: flex;
+  display: right;
+  flex-direction: column;
+  padding: 100px;
+  margin-top:125px;
+  overflow-y: auto;
 }
